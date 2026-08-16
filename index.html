@@ -1,3 +1,5 @@
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,20 +18,30 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <body>
 
-<nav>
-<div class="logo">
-    <img src="images/logo.png" alt="Alvindo's Logo">
-</div>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#pricing">Pricing</a></li>
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+<nav class="site-nav" aria-label="Primary">
+  <div class="logo">
+      <img src="images/logo.png" alt="Alvindo's Logo">
+  </div>
+
+  <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+    <span class="sr-only">Toggle navigation</span>
+    <svg class="icon-hamburger" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+    </svg>
+  </button>
+
+  <ul id="primary-navigation">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#services">Services</a></li>
+  <li><a href="#pricing">Pricing</a></li>
+  <li><a href="#gallery">Gallery</a></li>
+  <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
+<main id="main">
 <section id="home" class="hero">
 
 <div class="overlay">
@@ -241,6 +253,8 @@ href="https://wa.me/254112328443">
 </div>
 
 <script src="script.js"></script>
+
+</main>
 
 </body>
 </html>
