@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Simple SVG logo for Alvindo Beauty Parlour -->
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#FFD700"/>
+      <stop offset="1" stop-color="#FFB800"/>
+    </linearGradient>
+    <style>
+      .bg{fill:#0f0f0f}
+      .circle{fill:#1a1a1a;stroke:#FFD700;stroke-width:4}
+      .text{font-family: 'Segoe UI', sans-serif; font-size:34px; fill:url(#g); font-weight:700}
+      .tag{font-family: 'Segoe UI', sans-serif; font-size:12px; fill:#ccc}
+    </style>
+  </defs>
+  <rect class="bg" width="100%" height="100%" rx="10"/>
+  <g transform="translate(20,10)">
+    <circle class="circle" cx="50" cy="50" r="40"/>
+    <text x="50" y="58" text-anchor="middle" font-size="28" fill="#fff" font-weight="700">A</text>
+  </g>
+  <g transform="translate(110,50)">
+    <text class="text" x="0" y="-6">Alvindo</text>
+    <text class="tag" x="0" y="18">Beauty Parlour</text>
+  </g>
+</svg>
