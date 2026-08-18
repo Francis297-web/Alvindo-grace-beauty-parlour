@@ -1,0 +1,124 @@
+:root {
+  --nav-width: 80%;
+  --nav-bg: #ffffff;
+  --overlay-bg: rgba(0,0,0,0.4);
+  --transition: 250ms ease;
+}
+
+/* Basic page layout */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Prevent background scroll when nav open */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Header and toggle */
+.site-header {
+  position: relative;
+  z-index: 60;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  background: #fafafa;
+}
+
+.nav-toggle {
+  background: transparent;
+  border: 0;
+  padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  cursor: pointer;
+}
+.nav-toggle:focus {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+}
+
+/* simple hamburger */
+.hamburger {
+  width: 24px;
+  height: 2px;
+  background: #000;
+  display: block;
+  position: relative;
+}
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: inherit;
+}
+.hamburger::before { top: -6px; }
+.hamburger::after { top: 6px; }
+
+/* Off-canvas nav */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: var(--nav-width);
+  max-width: 320px;
+  background: var(--nav-bg);
+  transform: translateX(-110%);
+  transition: transform var(--transition);
+  z-index: 70;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.12);
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav li + li { margin-top: 0.75rem; }
+.nav a {
+  color: #111;
+  text-decoration: none;
+  font-size: 1.125rem;
+}
+
+/* Visible state */
+.nav.is-open {
+  transform: translateX(0);
+}
+
+/* Overlay */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay-bg);
+  z-index: 65;
+}
+
+/* Larger screens: show nav inline (desktop) */
+@media (min-width: 768px) {
+  .nav, .nav-overlay, .nav-toggle {
+    position: static;
+    transform: none;
+    height: auto;
+    width: auto;
+    background: transparent;
+    box-shadow: none;
+  }
+  .nav {
+    display: block;
+    padding: 0;
+  }
+  .nav-overlay {
+    display: none;
+  }
+  .site-header { justify-content: space-between; }
+}
